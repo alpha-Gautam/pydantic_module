@@ -13,6 +13,7 @@ class patient(BaseModel):
     medical_history: Optional[Dict[str, str]] = None
     
     @computed_field
+    @property
     def is_adult(self) -> bool:
         return self.age >= 18
     
